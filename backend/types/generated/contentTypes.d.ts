@@ -877,7 +877,8 @@ export interface ApiBenefitBenefit extends Schema.CollectionType {
   info: {
     singularName: 'benefit';
     pluralName: 'benefits';
-    displayName: 'Benefit';
+    displayName: 'benefit';
+    description: '';
   };
   options: {
     draftAndPublish: true;
