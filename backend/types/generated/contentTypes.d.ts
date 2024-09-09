@@ -904,6 +904,29 @@ export interface ApiBenefitBenefit extends Schema.CollectionType {
   };
 }
 
+export interface ApiFaqFaq extends Schema.CollectionType {
+  collectionName: 'faqs';
+  info: {
+    singularName: 'faq';
+    pluralName: 'faqs';
+    displayName: 'faq';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    question: Attribute.String;
+    answer: Attribute.Text;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::faq.faq', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::faq.faq', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
 export interface ApiIndexIndex extends Schema.SingleType {
   collectionName: 'indices';
   info: {
@@ -1137,6 +1160,7 @@ declare module '@strapi/types' {
       'api::article.article': ApiArticleArticle;
       'api::author.author': ApiAuthorAuthor;
       'api::benefit.benefit': ApiBenefitBenefit;
+      'api::faq.faq': ApiFaqFaq;
       'api::index.index': ApiIndexIndex;
       'api::legal.legal': ApiLegalLegal;
       'api::product.product': ApiProductProduct;
