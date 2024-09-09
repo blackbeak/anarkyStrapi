@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "targets",
+  "info": {
+    "singularName": "target",
+    "pluralName": "targets",
+    "displayName": "target"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "targetTitle": {
+      "type": "string"
+    },
+    "targetBody": {
+      "type": "text"
+    }
+  }
+}

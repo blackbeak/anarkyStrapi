@@ -872,6 +872,37 @@ export interface ApiAuthorAuthor extends Schema.CollectionType {
   };
 }
 
+export interface ApiBenefitBenefit extends Schema.CollectionType {
+  collectionName: 'benefits';
+  info: {
+    singularName: 'benefit';
+    pluralName: 'benefits';
+    displayName: 'Benefit';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    benefitTitle: Attribute.String;
+    benefitBody: Attribute.Text;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::benefit.benefit',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::benefit.benefit',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiIndexIndex extends Schema.SingleType {
   collectionName: 'indices';
   info: {
@@ -891,16 +922,7 @@ export interface ApiIndexIndex extends Schema.SingleType {
     bodyImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     body: Attribute.RichText;
     videoUrl: Attribute.String;
-    benefitOne: Attribute.Text;
-    benefitTwo: Attribute.Text;
-    benefitThree: Attribute.Text;
-    benefitFour: Attribute.Text;
-    benefitFive: Attribute.Text;
-    benefitSix: Attribute.Text;
     benefitHeadline: Attribute.String;
-    targetOne: Attribute.Text;
-    targetTwo: Attribute.Text;
-    targetThree: Attribute.Text;
     headerImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -1028,6 +1050,37 @@ export interface ApiReferenceLogoReferenceLogo extends Schema.CollectionType {
   };
 }
 
+export interface ApiTargetTarget extends Schema.CollectionType {
+  collectionName: 'targets';
+  info: {
+    singularName: 'target';
+    pluralName: 'targets';
+    displayName: 'target';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    targetTitle: Attribute.String;
+    targetBody: Attribute.Text;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::target.target',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::target.target',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiTestimonialTestimonial extends Schema.CollectionType {
   collectionName: 'testimonials';
   info: {
@@ -1082,10 +1135,12 @@ declare module '@strapi/types' {
       'plugin::i18n.locale': PluginI18NLocale;
       'api::article.article': ApiArticleArticle;
       'api::author.author': ApiAuthorAuthor;
+      'api::benefit.benefit': ApiBenefitBenefit;
       'api::index.index': ApiIndexIndex;
       'api::legal.legal': ApiLegalLegal;
       'api::product.product': ApiProductProduct;
       'api::reference-logo.reference-logo': ApiReferenceLogoReferenceLogo;
+      'api::target.target': ApiTargetTarget;
       'api::testimonial.testimonial': ApiTestimonialTestimonial;
     }
   }
