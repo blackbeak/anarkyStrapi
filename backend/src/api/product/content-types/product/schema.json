@@ -46,21 +46,13 @@
         "audios"
       ]
     },
-    "video": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
     "bodyImageText": {
       "type": "richtext"
     },
     "stripeUrl": {
+      "type": "string"
+    },
+    "videoUrl": {
       "type": "string"
     }
   }

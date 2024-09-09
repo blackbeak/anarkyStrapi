@@ -878,6 +878,7 @@ export interface ApiIndexIndex extends Schema.SingleType {
     singularName: 'index';
     pluralName: 'indices';
     displayName: 'index';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -889,6 +890,7 @@ export interface ApiIndexIndex extends Schema.SingleType {
     bodyImageText: Attribute.RichText;
     bodyImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     body: Attribute.RichText;
+    videoUrl: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -963,9 +965,9 @@ export interface ApiProductProduct extends Schema.CollectionType {
     body: Attribute.RichText;
     productImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     headerImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    video: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     bodyImageText: Attribute.RichText;
     stripeUrl: Attribute.String;
+    videoUrl: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
