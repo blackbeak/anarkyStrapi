@@ -891,6 +891,17 @@ export interface ApiIndexIndex extends Schema.SingleType {
     bodyImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     body: Attribute.RichText;
     videoUrl: Attribute.String;
+    benefitOne: Attribute.Text;
+    benefitTwo: Attribute.Text;
+    benefitThree: Attribute.Text;
+    benefitFour: Attribute.Text;
+    benefitFive: Attribute.Text;
+    benefitSix: Attribute.Text;
+    benefitHeadline: Attribute.String;
+    targetOne: Attribute.Text;
+    targetTwo: Attribute.Text;
+    targetThree: Attribute.Text;
+    headerImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -986,6 +997,71 @@ export interface ApiProductProduct extends Schema.CollectionType {
   };
 }
 
+export interface ApiReferenceLogoReferenceLogo extends Schema.CollectionType {
+  collectionName: 'reference_logos';
+  info: {
+    singularName: 'reference-logo';
+    pluralName: 'reference-logos';
+    displayName: 'reference logo';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    url: Attribute.String;
+    logo: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::reference-logo.reference-logo',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::reference-logo.reference-logo',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiTestimonialTestimonial extends Schema.CollectionType {
+  collectionName: 'testimonials';
+  info: {
+    singularName: 'testimonial';
+    pluralName: 'testimonials';
+    displayName: 'testimonial';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    testimonialText: Attribute.Text;
+    title: Attribute.String;
+    avatar: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    url: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::testimonial.testimonial',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::testimonial.testimonial',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -1009,6 +1085,8 @@ declare module '@strapi/types' {
       'api::index.index': ApiIndexIndex;
       'api::legal.legal': ApiLegalLegal;
       'api::product.product': ApiProductProduct;
+      'api::reference-logo.reference-logo': ApiReferenceLogoReferenceLogo;
+      'api::testimonial.testimonial': ApiTestimonialTestimonial;
     }
   }
 }

@@ -40,6 +40,46 @@
     },
     "videoUrl": {
       "type": "string"
+    },
+    "benefitOne": {
+      "type": "text"
+    },
+    "benefitTwo": {
+      "type": "text"
+    },
+    "benefitThree": {
+      "type": "text"
+    },
+    "benefitFour": {
+      "type": "text"
+    },
+    "benefitFive": {
+      "type": "text"
+    },
+    "benefitSix": {
+      "type": "text"
+    },
+    "benefitHeadline": {
+      "type": "string"
+    },
+    "targetOne": {
+      "type": "text"
+    },
+    "targetTwo": {
+      "type": "text"
+    },
+    "targetThree": {
+      "type": "text"
+    },
+    "headerImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }
