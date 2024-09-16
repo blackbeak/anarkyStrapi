@@ -4,7 +4,8 @@
   "info": {
     "singularName": "legal",
     "pluralName": "legals",
-    "displayName": "legal"
+    "displayName": "legal",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -21,19 +22,23 @@
       "type": "text"
     },
     "headerImage": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
     },
     "body": {
       "type": "richtext"
     },
     "dateModifed": {
+      "type": "string"
+    },
+    "slug": {
       "type": "string"
     }
   }

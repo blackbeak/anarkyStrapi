@@ -846,6 +846,7 @@ export interface ApiArticleArticle extends Schema.CollectionType {
       'oneToOne',
       'api::author.author'
     >;
+    slug: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -938,6 +939,39 @@ export interface ApiBenefitBenefit extends Schema.CollectionType {
   };
 }
 
+export interface ApiContactContact extends Schema.SingleType {
+  collectionName: 'contacts';
+  info: {
+    singularName: 'contact';
+    pluralName: 'contacts';
+    displayName: 'contact';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    headline: Attribute.String;
+    body: Attribute.Blocks;
+    summary: Attribute.Text;
+    heroImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::contact.contact',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::contact.contact',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiFaqFaq extends Schema.CollectionType {
   collectionName: 'faqs';
   info: {
@@ -1006,6 +1040,7 @@ export interface ApiLegalLegal extends Schema.CollectionType {
     singularName: 'legal';
     pluralName: 'legals';
     displayName: 'legal';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1020,6 +1055,7 @@ export interface ApiLegalLegal extends Schema.CollectionType {
     >;
     body: Attribute.RichText;
     dateModifed: Attribute.String;
+    slug: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1031,6 +1067,38 @@ export interface ApiLegalLegal extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::legal.legal',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiPricingPricing extends Schema.SingleType {
+  collectionName: 'pricings';
+  info: {
+    singularName: 'pricing';
+    pluralName: 'pricings';
+    displayName: 'pricing';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    headline: Attribute.String;
+    body: Attribute.Text;
+    heroImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::pricing.pricing',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::pricing.pricing',
       'oneToOne',
       'admin::user'
     > &
@@ -1114,6 +1182,7 @@ export interface ApiTargetTarget extends Schema.CollectionType {
     singularName: 'target';
     pluralName: 'targets';
     displayName: 'target';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1121,6 +1190,7 @@ export interface ApiTargetTarget extends Schema.CollectionType {
   attributes: {
     targetTitle: Attribute.String;
     targetBody: Attribute.Text;
+    slug: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1195,9 +1265,11 @@ declare module '@strapi/types' {
       'api::article.article': ApiArticleArticle;
       'api::author.author': ApiAuthorAuthor;
       'api::benefit.benefit': ApiBenefitBenefit;
+      'api::contact.contact': ApiContactContact;
       'api::faq.faq': ApiFaqFaq;
       'api::index.index': ApiIndexIndex;
       'api::legal.legal': ApiLegalLegal;
+      'api::pricing.pricing': ApiPricingPricing;
       'api::product.product': ApiProductProduct;
       'api::reference-logo.reference-logo': ApiReferenceLogoReferenceLogo;
       'api::target.target': ApiTargetTarget;

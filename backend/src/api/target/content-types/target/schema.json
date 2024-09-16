@@ -4,7 +4,8 @@
   "info": {
     "singularName": "target",
     "pluralName": "targets",
-    "displayName": "target"
+    "displayName": "target",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -16,6 +17,9 @@
     },
     "targetBody": {
       "type": "text"
+    },
+    "slug": {
+      "type": "string"
     }
   }
 }
