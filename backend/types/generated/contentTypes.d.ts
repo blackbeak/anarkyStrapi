@@ -1127,6 +1127,11 @@ export interface ApiProductProduct extends Schema.CollectionType {
     bodyImageText: Attribute.RichText;
     stripeUrl: Attribute.String;
     videoUrl: Attribute.String;
+    scenario: Attribute.Relation<
+      'api::product.product',
+      'manyToOne',
+      'api::scenario.scenario'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1169,6 +1174,43 @@ export interface ApiReferenceLogoReferenceLogo extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::reference-logo.reference-logo',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiScenarioScenario extends Schema.CollectionType {
+  collectionName: 'scenarios';
+  info: {
+    singularName: 'scenario';
+    pluralName: 'scenarios';
+    displayName: 'scenario';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    shortDesc: Attribute.Text;
+    scenarioImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    products: Attribute.Relation<
+      'api::scenario.scenario',
+      'oneToMany',
+      'api::product.product'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::scenario.scenario',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::scenario.scenario',
       'oneToOne',
       'admin::user'
     > &
@@ -1272,6 +1314,7 @@ declare module '@strapi/types' {
       'api::pricing.pricing': ApiPricingPricing;
       'api::product.product': ApiProductProduct;
       'api::reference-logo.reference-logo': ApiReferenceLogoReferenceLogo;
+      'api::scenario.scenario': ApiScenarioScenario;
       'api::target.target': ApiTargetTarget;
       'api::testimonial.testimonial': ApiTestimonialTestimonial;
     }
