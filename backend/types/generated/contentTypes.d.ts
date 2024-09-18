@@ -840,13 +840,14 @@ export interface ApiArticleArticle extends Schema.CollectionType {
     body: Attribute.RichText;
     articleImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     headerImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    video: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     author: Attribute.Relation<
       'api::article.article',
       'oneToOne',
       'api::author.author'
     >;
     slug: Attribute.String;
+    bodyImageText: Attribute.RichText;
+    videoUrl: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

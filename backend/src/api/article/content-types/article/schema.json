@@ -46,23 +46,18 @@
         "audios"
       ]
     },
-    "video": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
     "author": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::author.author"
     },
     "slug": {
+      "type": "string"
+    },
+    "bodyImageText": {
+      "type": "richtext"
+    },
+    "videoUrl": {
       "type": "string"
     }
   }
