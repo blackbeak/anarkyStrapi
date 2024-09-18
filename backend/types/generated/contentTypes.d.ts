@@ -1049,10 +1049,7 @@ export interface ApiLegalLegal extends Schema.CollectionType {
     title: Attribute.String;
     headline: Attribute.String;
     summary: Attribute.Text;
-    headerImage: Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios',
-      true
-    >;
+    headerImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     body: Attribute.RichText;
     dateModified: Attribute.String;
     slug: Attribute.String;
