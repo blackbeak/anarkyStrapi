@@ -35,17 +35,6 @@
         "audios"
       ]
     },
-    "headerImage": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
     "author": {
       "type": "relation",
       "relation": "oneToOne",
@@ -59,6 +48,16 @@
     },
     "videoUrl": {
       "type": "string"
+    },
+    "headerImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

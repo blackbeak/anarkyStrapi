@@ -839,7 +839,6 @@ export interface ApiArticleArticle extends Schema.CollectionType {
     summary: Attribute.Text;
     body: Attribute.RichText;
     articleImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    headerImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     author: Attribute.Relation<
       'api::article.article',
       'oneToOne',
@@ -848,6 +847,7 @@ export interface ApiArticleArticle extends Schema.CollectionType {
     slug: Attribute.String;
     bodyImageText: Attribute.RichText;
     videoUrl: Attribute.String;
+    headerImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
