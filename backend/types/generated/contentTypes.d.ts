@@ -1132,6 +1132,7 @@ export interface ApiProductProduct extends Schema.CollectionType {
       'manyToOne',
       'api::scenario.scenario'
     >;
+    slug: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
