@@ -1054,7 +1054,7 @@ export interface ApiLegalLegal extends Schema.CollectionType {
       true
     >;
     body: Attribute.RichText;
-    dateModifed: Attribute.String;
+    dateModified: Attribute.String;
     slug: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
