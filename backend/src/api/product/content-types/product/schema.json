@@ -55,14 +55,19 @@
     "videoUrl": {
       "type": "string"
     },
+    "scenarios": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::scenario.scenario"
+    },
+    "slug": {
+      "type": "string"
+    },
     "scenario": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::scenario.scenario",
       "inversedBy": "products"
-    },
-    "slug": {
-      "type": "string"
     }
   }
 }

@@ -1167,12 +1167,17 @@ export interface ApiProductProduct extends Schema.CollectionType {
     bodyImageText: Attribute.RichText;
     stripeUrl: Attribute.String;
     videoUrl: Attribute.String;
+    scenarios: Attribute.Relation<
+      'api::product.product',
+      'oneToMany',
+      'api::scenario.scenario'
+    >;
+    slug: Attribute.String;
     scenario: Attribute.Relation<
       'api::product.product',
       'manyToOne',
       'api::scenario.scenario'
     >;
-    slug: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1228,6 +1233,7 @@ export interface ApiScenarioScenario extends Schema.CollectionType {
     singularName: 'scenario';
     pluralName: 'scenarios';
     displayName: 'scenario';
+    description: '';
   };
   options: {
     draftAndPublish: true;
