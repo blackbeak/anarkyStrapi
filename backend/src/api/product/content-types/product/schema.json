@@ -62,12 +62,6 @@
     },
     "slug": {
       "type": "string"
-    },
-    "scenario": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::scenario.scenario",
-      "inversedBy": "products"
     }
   }
 }

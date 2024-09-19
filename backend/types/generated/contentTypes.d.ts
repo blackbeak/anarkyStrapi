@@ -1173,11 +1173,6 @@ export interface ApiProductProduct extends Schema.CollectionType {
       'api::scenario.scenario'
     >;
     slug: Attribute.String;
-    scenario: Attribute.Relation<
-      'api::product.product',
-      'manyToOne',
-      'api::scenario.scenario'
-    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1242,11 +1237,6 @@ export interface ApiScenarioScenario extends Schema.CollectionType {
     name: Attribute.String;
     shortDesc: Attribute.Text;
     scenarioImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    products: Attribute.Relation<
-      'api::scenario.scenario',
-      'oneToMany',
-      'api::product.product'
-    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
