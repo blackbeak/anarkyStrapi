@@ -30,15 +30,16 @@
     "hoursDescription": {
       "type": "string"
     },
-    "product": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::product.product"
-    },
     "scenarios": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::scenario.scenario"
+    },
+    "stripePriceAnnualID": {
+      "type": "string"
+    },
+    "stripePriceMonthlyID": {
+      "type": "string"
     }
   }
 }

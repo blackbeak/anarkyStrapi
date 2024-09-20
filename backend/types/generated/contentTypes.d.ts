@@ -1165,7 +1165,6 @@ export interface ApiProductProduct extends Schema.CollectionType {
     productImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     headerImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     bodyImageText: Attribute.RichText;
-    stripeUrl: Attribute.String;
     videoUrl: Attribute.String;
     scenarios: Attribute.Relation<
       'api::product.product',
@@ -1173,6 +1172,11 @@ export interface ApiProductProduct extends Schema.CollectionType {
       'api::scenario.scenario'
     >;
     slug: Attribute.String;
+    versions: Attribute.Relation<
+      'api::product.product',
+      'oneToMany',
+      'api::version.version'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1340,16 +1344,13 @@ export interface ApiVersionVersion extends Schema.CollectionType {
     headline: Attribute.String;
     hours: Attribute.String;
     hoursDescription: Attribute.String;
-    product: Attribute.Relation<
-      'api::version.version',
-      'oneToOne',
-      'api::product.product'
-    >;
     scenarios: Attribute.Relation<
       'api::version.version',
       'oneToMany',
       'api::scenario.scenario'
     >;
+    stripePriceAnnualID: Attribute.String;
+    stripePriceMonthlyID: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

@@ -49,9 +49,6 @@
     "bodyImageText": {
       "type": "richtext"
     },
-    "stripeUrl": {
-      "type": "string"
-    },
     "videoUrl": {
       "type": "string"
     },
@@ -62,6 +59,11 @@
     },
     "slug": {
       "type": "string"
+    },
+    "versions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::version.version"
     }
   }
 }
