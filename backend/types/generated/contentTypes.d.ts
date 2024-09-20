@@ -1328,6 +1328,7 @@ export interface ApiVersionVersion extends Schema.CollectionType {
     singularName: 'version';
     pluralName: 'versions';
     displayName: 'version';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1339,6 +1340,16 @@ export interface ApiVersionVersion extends Schema.CollectionType {
     headline: Attribute.String;
     hours: Attribute.String;
     hoursDescription: Attribute.String;
+    product: Attribute.Relation<
+      'api::version.version',
+      'oneToOne',
+      'api::product.product'
+    >;
+    scenarios: Attribute.Relation<
+      'api::version.version',
+      'oneToMany',
+      'api::scenario.scenario'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

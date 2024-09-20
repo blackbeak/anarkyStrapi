@@ -4,7 +4,8 @@
   "info": {
     "singularName": "version",
     "pluralName": "versions",
-    "displayName": "version"
+    "displayName": "version",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -28,6 +29,16 @@
     },
     "hoursDescription": {
       "type": "string"
+    },
+    "product": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::product.product"
+    },
+    "scenarios": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::scenario.scenario"
     }
   }
 }
