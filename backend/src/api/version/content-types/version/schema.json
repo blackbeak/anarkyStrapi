@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "versions",
+  "info": {
+    "singularName": "version",
+    "pluralName": "versions",
+    "displayName": "version"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "versionName": {
+      "type": "string"
+    },
+    "annualPrice": {
+      "type": "string"
+    },
+    "monthlyPrice": {
+      "type": "string"
+    },
+    "headline": {
+      "type": "string"
+    },
+    "hours": {
+      "type": "string"
+    },
+    "hoursDescription": {
+      "type": "string"
+    }
+  }
+}

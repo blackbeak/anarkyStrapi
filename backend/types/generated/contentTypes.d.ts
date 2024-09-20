@@ -1322,6 +1322,41 @@ export interface ApiTestimonialTestimonial extends Schema.CollectionType {
   };
 }
 
+export interface ApiVersionVersion extends Schema.CollectionType {
+  collectionName: 'versions';
+  info: {
+    singularName: 'version';
+    pluralName: 'versions';
+    displayName: 'version';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    versionName: Attribute.String;
+    annualPrice: Attribute.String;
+    monthlyPrice: Attribute.String;
+    headline: Attribute.String;
+    hours: Attribute.String;
+    hoursDescription: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::version.version',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::version.version',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -1355,6 +1390,7 @@ declare module '@strapi/types' {
       'api::scenario.scenario': ApiScenarioScenario;
       'api::target.target': ApiTargetTarget;
       'api::testimonial.testimonial': ApiTestimonialTestimonial;
+      'api::version.version': ApiVersionVersion;
     }
   }
 }
