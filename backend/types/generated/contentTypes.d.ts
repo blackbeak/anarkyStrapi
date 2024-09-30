@@ -794,6 +794,7 @@ export interface ApiAboutAbout extends Schema.SingleType {
     singularName: 'about';
     pluralName: 'abouts';
     displayName: 'About';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -801,9 +802,9 @@ export interface ApiAboutAbout extends Schema.SingleType {
   attributes: {
     title: Attribute.String;
     headline: Attribute.String;
-    body: Attribute.Blocks;
     heroImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     bodyImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    body: Attribute.RichText;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -988,15 +989,16 @@ export interface ApiContactContact extends Schema.SingleType {
     singularName: 'contact';
     pluralName: 'contacts';
     displayName: 'contact';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     headline: Attribute.String;
-    body: Attribute.Blocks;
     summary: Attribute.Text;
     heroImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    body: Attribute.RichText;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
