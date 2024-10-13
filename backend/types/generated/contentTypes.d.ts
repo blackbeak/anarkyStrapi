@@ -1040,6 +1040,40 @@ export interface ApiFaqFaq extends Schema.CollectionType {
   };
 }
 
+export interface ApiFaqHomeFaqHome extends Schema.SingleType {
+  collectionName: 'faq_homes';
+  info: {
+    singularName: 'faq-home';
+    pluralName: 'faq-homes';
+    displayName: 'faqHome';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    headline: Attribute.String;
+    background: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    shortDesc: Attribute.RichText;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::faq-home.faq-home',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::faq-home.faq-home',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiIndexIndex extends Schema.SingleType {
   collectionName: 'indices';
   info: {
@@ -1396,6 +1430,7 @@ declare module '@strapi/types' {
       'api::category.category': ApiCategoryCategory;
       'api::contact.contact': ApiContactContact;
       'api::faq.faq': ApiFaqFaq;
+      'api::faq-home.faq-home': ApiFaqHomeFaqHome;
       'api::index.index': ApiIndexIndex;
       'api::legal.legal': ApiLegalLegal;
       'api::pricing.pricing': ApiPricingPricing;

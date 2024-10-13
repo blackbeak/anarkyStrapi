@@ -1,0 +1,35 @@
+{
+  "kind": "singleType",
+  "collectionName": "faq_homes",
+  "info": {
+    "singularName": "faq-home",
+    "pluralName": "faq-homes",
+    "displayName": "faqHome",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "headline": {
+      "type": "string"
+    },
+    "background": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "shortDesc": {
+      "type": "richtext"
+    }
+  }
+}
