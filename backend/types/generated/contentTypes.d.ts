@@ -928,6 +928,7 @@ export interface ApiBenefitBenefit extends Schema.CollectionType {
   attributes: {
     benefitTitle: Attribute.String;
     benefitBody: Attribute.Text;
+    orderBy: Attribute.Integer;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

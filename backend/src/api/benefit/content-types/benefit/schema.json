@@ -17,6 +17,9 @@
     },
     "benefitBody": {
       "type": "text"
+    },
+    "orderBy": {
+      "type": "integer"
     }
   }
 }
