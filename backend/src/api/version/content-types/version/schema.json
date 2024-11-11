@@ -18,28 +18,29 @@
     "annualPrice": {
       "type": "string"
     },
-    "monthlyPrice": {
-      "type": "string"
-    },
     "headline": {
       "type": "string"
     },
-    "hours": {
+    "versionDescription": {
       "type": "string"
-    },
-    "hoursDescription": {
-      "type": "string"
-    },
-    "scenarios": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::scenario.scenario"
     },
     "stripePriceAnnualID": {
       "type": "string"
     },
-    "stripePriceMonthlyID": {
-      "type": "string"
+    "product_variables": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::product-variable.product-variable"
+    },
+    "productPicture": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

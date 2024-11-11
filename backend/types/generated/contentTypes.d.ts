@@ -1257,6 +1257,38 @@ export interface ApiProductProduct extends Schema.CollectionType {
   };
 }
 
+export interface ApiProductVariableProductVariable
+  extends Schema.CollectionType {
+  collectionName: 'product_variables';
+  info: {
+    singularName: 'product-variable';
+    pluralName: 'product-variables';
+    displayName: 'productVariables';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    link: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::product-variable.product-variable',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::product-variable.product-variable',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiReferenceLogoReferenceLogo extends Schema.CollectionType {
   collectionName: 'reference_logos';
   info: {
@@ -1402,17 +1434,15 @@ export interface ApiVersionVersion extends Schema.CollectionType {
   attributes: {
     versionName: Attribute.String;
     annualPrice: Attribute.String;
-    monthlyPrice: Attribute.String;
     headline: Attribute.String;
-    hours: Attribute.String;
-    hoursDescription: Attribute.String;
-    scenarios: Attribute.Relation<
+    versionDescription: Attribute.String;
+    stripePriceAnnualID: Attribute.String;
+    product_variables: Attribute.Relation<
       'api::version.version',
       'oneToMany',
-      'api::scenario.scenario'
+      'api::product-variable.product-variable'
     >;
-    stripePriceAnnualID: Attribute.String;
-    stripePriceMonthlyID: Attribute.String;
+    productPicture: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1462,6 +1492,7 @@ declare module '@strapi/types' {
       'api::legal.legal': ApiLegalLegal;
       'api::pricing.pricing': ApiPricingPricing;
       'api::product.product': ApiProductProduct;
+      'api::product-variable.product-variable': ApiProductVariableProductVariable;
       'api::reference-logo.reference-logo': ApiReferenceLogoReferenceLogo;
       'api::scenario.scenario': ApiScenarioScenario;
       'api::target.target': ApiTargetTarget;
