@@ -1443,6 +1443,8 @@ export interface ApiVersionVersion extends Schema.CollectionType {
       'api::product-variable.product-variable'
     >;
     productPicture: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    publish: Attribute.Boolean;
+    order: Attribute.Integer;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

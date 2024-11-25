@@ -33,14 +33,21 @@
       "target": "api::product-variable.product-variable"
     },
     "productPicture": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "publish": {
+      "type": "boolean"
+    },
+    "order": {
+      "type": "integer"
     }
   }
 }
