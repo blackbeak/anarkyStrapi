@@ -1444,7 +1444,7 @@ export interface ApiVersionVersion extends Schema.CollectionType {
     productPicture: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     publish: Attribute.Boolean;
     order: Attribute.Integer;
-    annualPrice: Attribute.Integer;
+    annualPrice: Attribute.BigInteger;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

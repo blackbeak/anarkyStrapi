@@ -47,7 +47,7 @@
       "type": "integer"
     },
     "annualPrice": {
-      "type": "integer"
+      "type": "biginteger"
     }
   }
 }
