@@ -15,9 +15,6 @@
     "versionName": {
       "type": "string"
     },
-    "annualPrice": {
-      "type": "string"
-    },
     "headline": {
       "type": "string"
     },
@@ -47,6 +44,9 @@
       "type": "boolean"
     },
     "order": {
+      "type": "integer"
+    },
+    "annualPrice": {
       "type": "integer"
     }
   }

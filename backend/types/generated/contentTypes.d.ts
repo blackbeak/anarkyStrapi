@@ -1433,7 +1433,6 @@ export interface ApiVersionVersion extends Schema.CollectionType {
   };
   attributes: {
     versionName: Attribute.String;
-    annualPrice: Attribute.String;
     headline: Attribute.String;
     versionDescription: Attribute.String;
     stripePriceAnnualID: Attribute.String;
@@ -1445,6 +1444,7 @@ export interface ApiVersionVersion extends Schema.CollectionType {
     productPicture: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     publish: Attribute.Boolean;
     order: Attribute.Integer;
+    annualPrice: Attribute.Integer;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
