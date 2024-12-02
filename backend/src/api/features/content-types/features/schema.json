@@ -1,0 +1,43 @@
+{
+  "kind": "singleType",
+  "collectionName": "allfeatures",
+  "info": {
+    "singularName": "features",
+    "pluralName": "allfeatures",
+    "displayName": "features",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "headline": {
+      "type": "string"
+    },
+    "scenarioHeadline": {
+      "type": "string"
+    },
+    "scenarioText": {
+      "type": "text"
+    },
+    "technicalHeadline": {
+      "type": "string"
+    },
+    "feature_collections": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::feature-collection.feature-collection"
+    },
+    "scenarios": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::scenario.scenario"
+    },
+    "tech_collections": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::tech-collection.tech-collection"
+    }
+  }
+}

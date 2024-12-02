@@ -1100,6 +1100,87 @@ export interface ApiFaqHomeFaqHome extends Schema.SingleType {
   };
 }
 
+export interface ApiFeatureCollectionFeatureCollection
+  extends Schema.CollectionType {
+  collectionName: 'feature_collections';
+  info: {
+    singularName: 'feature-collection';
+    pluralName: 'feature-collections';
+    displayName: 'featureCollection';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    featureDescription: Attribute.Text;
+    featureImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::feature-collection.feature-collection',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::feature-collection.feature-collection',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiFeaturesFeatures extends Schema.SingleType {
+  collectionName: 'allfeatures';
+  info: {
+    singularName: 'features';
+    pluralName: 'allfeatures';
+    displayName: 'features';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    headline: Attribute.String;
+    scenarioHeadline: Attribute.String;
+    scenarioText: Attribute.Text;
+    technicalHeadline: Attribute.String;
+    feature_collections: Attribute.Relation<
+      'api::features.features',
+      'oneToMany',
+      'api::feature-collection.feature-collection'
+    >;
+    scenarios: Attribute.Relation<
+      'api::features.features',
+      'oneToMany',
+      'api::scenario.scenario'
+    >;
+    tech_collections: Attribute.Relation<
+      'api::features.features',
+      'oneToMany',
+      'api::tech-collection.tech-collection'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::features.features',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::features.features',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiIndexIndex extends Schema.SingleType {
   collectionName: 'indices';
   info: {
@@ -1386,6 +1467,37 @@ export interface ApiTargetTarget extends Schema.CollectionType {
   };
 }
 
+export interface ApiTechCollectionTechCollection extends Schema.CollectionType {
+  collectionName: 'tech_collections';
+  info: {
+    singularName: 'tech-collection';
+    pluralName: 'tech-collections';
+    displayName: 'techCollection';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    techDescription: Attribute.Text;
+    techImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::tech-collection.tech-collection',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::tech-collection.tech-collection',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiTestimonialTestimonial extends Schema.CollectionType {
   collectionName: 'testimonials';
   info: {
@@ -1490,6 +1602,8 @@ declare module '@strapi/types' {
       'api::contact.contact': ApiContactContact;
       'api::faq.faq': ApiFaqFaq;
       'api::faq-home.faq-home': ApiFaqHomeFaqHome;
+      'api::feature-collection.feature-collection': ApiFeatureCollectionFeatureCollection;
+      'api::features.features': ApiFeaturesFeatures;
       'api::index.index': ApiIndexIndex;
       'api::legal.legal': ApiLegalLegal;
       'api::pricing.pricing': ApiPricingPricing;
@@ -1498,6 +1612,7 @@ declare module '@strapi/types' {
       'api::reference-logo.reference-logo': ApiReferenceLogoReferenceLogo;
       'api::scenario.scenario': ApiScenarioScenario;
       'api::target.target': ApiTargetTarget;
+      'api::tech-collection.tech-collection': ApiTechCollectionTechCollection;
       'api::testimonial.testimonial': ApiTestimonialTestimonial;
       'api::version.version': ApiVersionVersion;
     }

@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "feature_collections",
+  "info": {
+    "singularName": "feature-collection",
+    "pluralName": "feature-collections",
+    "displayName": "featureCollection"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "featureDescription": {
+      "type": "text"
+    },
+    "featureImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tech_collections",
+  "info": {
+    "singularName": "tech-collection",
+    "pluralName": "tech-collections",
+    "displayName": "techCollection"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "techDescription": {
+      "type": "text"
+    },
+    "techImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}
