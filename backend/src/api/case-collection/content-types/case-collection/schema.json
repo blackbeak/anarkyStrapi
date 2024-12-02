@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "case_collections",
+  "info": {
+    "singularName": "case-collection",
+    "pluralName": "case-collections",
+    "displayName": "caseCollection"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "headline": {
+      "type": "string"
+    },
+    "shortDesc": {
+      "type": "text"
+    },
+    "caseImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

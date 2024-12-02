@@ -972,6 +972,66 @@ export interface ApiBlogBlog extends Schema.SingleType {
   };
 }
 
+export interface ApiCaseCase extends Schema.CollectionType {
+  collectionName: 'cases';
+  info: {
+    singularName: 'case';
+    pluralName: 'cases';
+    displayName: 'case';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    headline: Attribute.String;
+    heroImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    case_collections: Attribute.Relation<
+      'api::case.case',
+      'oneToMany',
+      'api::case-collection.case-collection'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::case.case', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::case.case', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
+export interface ApiCaseCollectionCaseCollection extends Schema.CollectionType {
+  collectionName: 'case_collections';
+  info: {
+    singularName: 'case-collection';
+    pluralName: 'case-collections';
+    displayName: 'caseCollection';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    headline: Attribute.String;
+    shortDesc: Attribute.Text;
+    caseImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::case-collection.case-collection',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::case-collection.case-collection',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiCategoryCategory extends Schema.CollectionType {
   collectionName: 'categories';
   info: {
@@ -1598,6 +1658,8 @@ declare module '@strapi/types' {
       'api::author.author': ApiAuthorAuthor;
       'api::benefit.benefit': ApiBenefitBenefit;
       'api::blog.blog': ApiBlogBlog;
+      'api::case.case': ApiCaseCase;
+      'api::case-collection.case-collection': ApiCaseCollectionCaseCollection;
       'api::category.category': ApiCategoryCategory;
       'api::contact.contact': ApiContactContact;
       'api::faq.faq': ApiFaqFaq;
