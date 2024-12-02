@@ -1351,55 +1351,6 @@ export interface ApiPricingPricing extends Schema.SingleType {
   };
 }
 
-export interface ApiProductProduct extends Schema.CollectionType {
-  collectionName: 'products';
-  info: {
-    singularName: 'product';
-    pluralName: 'products';
-    displayName: 'product';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    title: Attribute.String;
-    headline: Attribute.String;
-    summary: Attribute.Text;
-    body: Attribute.RichText;
-    productImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    headerImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    bodyImageText: Attribute.RichText;
-    videoUrl: Attribute.String;
-    scenarios: Attribute.Relation<
-      'api::product.product',
-      'oneToMany',
-      'api::scenario.scenario'
-    >;
-    slug: Attribute.String;
-    versions: Attribute.Relation<
-      'api::product.product',
-      'oneToMany',
-      'api::version.version'
-    >;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::product.product',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::product.product',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface ApiProductVariableProductVariable
   extends Schema.CollectionType {
   collectionName: 'product_variables';
@@ -1671,7 +1622,6 @@ declare module '@strapi/types' {
       'api::index.index': ApiIndexIndex;
       'api::legal.legal': ApiLegalLegal;
       'api::pricing.pricing': ApiPricingPricing;
-      'api::product.product': ApiProductProduct;
       'api::product-variable.product-variable': ApiProductVariableProductVariable;
       'api::reference-logo.reference-logo': ApiReferenceLogoReferenceLogo;
       'api::scenario.scenario': ApiScenarioScenario;
