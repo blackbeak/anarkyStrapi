@@ -978,6 +978,7 @@ export interface ApiCaseCase extends Schema.CollectionType {
     singularName: 'case';
     pluralName: 'cases';
     displayName: 'case';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -990,6 +991,7 @@ export interface ApiCaseCase extends Schema.CollectionType {
       'oneToMany',
       'api::case-collection.case-collection'
     >;
+    slug: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
