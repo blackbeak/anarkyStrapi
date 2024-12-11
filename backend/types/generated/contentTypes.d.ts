@@ -992,6 +992,11 @@ export interface ApiCaseCase extends Schema.CollectionType {
       'api::case-collection.case-collection'
     >;
     slug: Attribute.String;
+    testimonials: Attribute.Relation<
+      'api::case.case',
+      'oneToMany',
+      'api::testimonial.testimonial'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
