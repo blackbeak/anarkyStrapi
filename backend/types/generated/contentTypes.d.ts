@@ -1363,6 +1363,7 @@ export interface ApiProductVariableProductVariable
     singularName: 'product-variable';
     pluralName: 'product-variables';
     displayName: 'productVariables';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1370,6 +1371,8 @@ export interface ApiProductVariableProductVariable
   attributes: {
     name: Attribute.String;
     link: Attribute.String;
+    productPicture: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    productDescription: Attribute.RichText;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

@@ -4,7 +4,8 @@
   "info": {
     "singularName": "product-variable",
     "pluralName": "product-variables",
-    "displayName": "productVariables"
+    "displayName": "productVariables",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -16,6 +17,19 @@
     },
     "link": {
       "type": "string"
+    },
+    "productPicture": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "productDescription": {
+      "type": "richtext"
     }
   }
 }
