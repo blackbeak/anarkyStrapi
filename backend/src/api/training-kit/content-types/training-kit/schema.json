@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "training_kits",
+  "info": {
+    "singularName": "training-kit",
+    "pluralName": "training-kits",
+    "displayName": "training-kit"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "headline": {
+      "type": "string"
+    },
+    "kitImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "product_variables": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::product-variable.product-variable"
+    }
+  }
+}

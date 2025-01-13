@@ -1371,8 +1371,7 @@ export interface ApiProductVariableProductVariable
   attributes: {
     name: Attribute.String;
     link: Attribute.String;
-    productPicture: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    productDescription: Attribute.RichText;
+    description: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1553,6 +1552,42 @@ export interface ApiTestimonialTestimonial extends Schema.CollectionType {
   };
 }
 
+export interface ApiTrainingKitTrainingKit extends Schema.CollectionType {
+  collectionName: 'training_kits';
+  info: {
+    singularName: 'training-kit';
+    pluralName: 'training-kits';
+    displayName: 'training-kit';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    headline: Attribute.String;
+    kitImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    product_variables: Attribute.Relation<
+      'api::training-kit.training-kit',
+      'oneToMany',
+      'api::product-variable.product-variable'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::training-kit.training-kit',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::training-kit.training-kit',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiVersionVersion extends Schema.CollectionType {
   collectionName: 'versions';
   info: {
@@ -1636,6 +1671,7 @@ declare module '@strapi/types' {
       'api::target.target': ApiTargetTarget;
       'api::tech-collection.tech-collection': ApiTechCollectionTechCollection;
       'api::testimonial.testimonial': ApiTestimonialTestimonial;
+      'api::training-kit.training-kit': ApiTrainingKitTrainingKit;
       'api::version.version': ApiVersionVersion;
     }
   }

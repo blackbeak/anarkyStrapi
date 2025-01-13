@@ -18,18 +18,8 @@
     "link": {
       "type": "string"
     },
-    "productPicture": {
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
-      "type": "media",
-      "multiple": false
-    },
-    "productDescription": {
-      "type": "richtext"
+    "description": {
+      "type": "string"
     }
   }
 }
