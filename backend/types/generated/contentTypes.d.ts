@@ -1469,6 +1469,7 @@ export interface ApiTargetTarget extends Schema.CollectionType {
     targetTitle: Attribute.String;
     targetBody: Attribute.Text;
     slug: Attribute.String;
+    targetImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
