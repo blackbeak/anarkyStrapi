@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "software_items",
+  "info": {
+    "singularName": "software-item",
+    "pluralName": "software-items",
+    "displayName": "softwareItem"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "headline": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    }
+  }
+}

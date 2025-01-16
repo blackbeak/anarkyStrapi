@@ -1454,6 +1454,37 @@ export interface ApiScenarioScenario extends Schema.CollectionType {
   };
 }
 
+export interface ApiSoftwareItemSoftwareItem extends Schema.CollectionType {
+  collectionName: 'software_items';
+  info: {
+    singularName: 'software-item';
+    pluralName: 'software-items';
+    displayName: 'softwareItem';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    headline: Attribute.String;
+    description: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::software-item.software-item',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::software-item.software-item',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiTargetTarget extends Schema.CollectionType {
   collectionName: 'targets';
   info: {
@@ -1669,6 +1700,7 @@ declare module '@strapi/types' {
       'api::product-variable.product-variable': ApiProductVariableProductVariable;
       'api::reference-logo.reference-logo': ApiReferenceLogoReferenceLogo;
       'api::scenario.scenario': ApiScenarioScenario;
+      'api::software-item.software-item': ApiSoftwareItemSoftwareItem;
       'api::target.target': ApiTargetTarget;
       'api::tech-collection.tech-collection': ApiTechCollectionTechCollection;
       'api::testimonial.testimonial': ApiTestimonialTestimonial;
