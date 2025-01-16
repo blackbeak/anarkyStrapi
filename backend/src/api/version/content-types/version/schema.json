@@ -48,6 +48,11 @@
     },
     "annualPrice": {
       "type": "biginteger"
+    },
+    "software_items": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::software-item.software-item"
     }
   }
 }

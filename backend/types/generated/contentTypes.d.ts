@@ -1645,6 +1645,11 @@ export interface ApiVersionVersion extends Schema.CollectionType {
     publish: Attribute.Boolean;
     order: Attribute.Integer;
     annualPrice: Attribute.BigInteger;
+    software_items: Attribute.Relation<
+      'api::version.version',
+      'oneToMany',
+      'api::software-item.software-item'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
