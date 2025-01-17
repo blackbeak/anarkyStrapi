@@ -1215,11 +1215,6 @@ export interface ApiFeaturesFeatures extends Schema.SingleType {
     scenarioHeadline: Attribute.String;
     scenarioText: Attribute.Text;
     technicalHeadline: Attribute.String;
-    feature_collections: Attribute.Relation<
-      'api::features.features',
-      'oneToMany',
-      'api::feature-collection.feature-collection'
-    >;
     scenarios: Attribute.Relation<
       'api::features.features',
       'oneToMany',
@@ -1229,6 +1224,16 @@ export interface ApiFeaturesFeatures extends Schema.SingleType {
       'api::features.features',
       'oneToMany',
       'api::tech-collection.tech-collection'
+    >;
+    training_kit: Attribute.Relation<
+      'api::features.features',
+      'oneToOne',
+      'api::training-kit.training-kit'
+    >;
+    feature_collections: Attribute.Relation<
+      'api::features.features',
+      'oneToMany',
+      'api::feature-collection.feature-collection'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;

@@ -24,11 +24,6 @@
     "technicalHeadline": {
       "type": "string"
     },
-    "feature_collections": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::feature-collection.feature-collection"
-    },
     "scenarios": {
       "type": "relation",
       "relation": "oneToMany",
@@ -38,6 +33,16 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::tech-collection.tech-collection"
+    },
+    "training_kit": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::training-kit.training-kit"
+    },
+    "feature_collections": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::feature-collection.feature-collection"
     }
   }
 }
