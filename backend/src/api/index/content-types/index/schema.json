@@ -54,6 +54,19 @@
         "videos",
         "audios"
       ]
+    },
+    "downloadImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "downloadBenefits": {
+      "type": "richtext"
     }
   }
 }

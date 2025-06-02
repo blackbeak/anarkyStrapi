@@ -1274,6 +1274,8 @@ export interface ApiIndexIndex extends Schema.SingleType {
     videoUrl: Attribute.String;
     benefitHeadline: Attribute.String;
     headerImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    downloadImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    downloadBenefits: Attribute.RichText;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
