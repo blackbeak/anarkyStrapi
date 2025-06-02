@@ -56,6 +56,20 @@
       ]
     },
     "downloadImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "downloadBenefits": {
+      "type": "richtext"
+    },
+    "pdfDownload": {
       "allowedTypes": [
         "images",
         "files",
@@ -64,9 +78,6 @@
       ],
       "type": "media",
       "multiple": false
-    },
-    "downloadBenefits": {
-      "type": "richtext"
     }
   }
 }
