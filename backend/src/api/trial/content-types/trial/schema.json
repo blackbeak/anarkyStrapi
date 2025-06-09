@@ -1,0 +1,35 @@
+{
+  "kind": "singleType",
+  "collectionName": "trials",
+  "info": {
+    "singularName": "trial",
+    "pluralName": "trials",
+    "displayName": "trial",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "headline": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "heroImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "body": {
+      "type": "richtext"
+    }
+  }
+}

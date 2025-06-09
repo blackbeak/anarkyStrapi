@@ -1628,6 +1628,40 @@ export interface ApiTrainingKitTrainingKit extends Schema.CollectionType {
   };
 }
 
+export interface ApiTrialTrial extends Schema.SingleType {
+  collectionName: 'trials';
+  info: {
+    singularName: 'trial';
+    pluralName: 'trials';
+    displayName: 'trial';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    headline: Attribute.String;
+    summary: Attribute.String;
+    heroImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    body: Attribute.RichText;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::trial.trial',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::trial.trial',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiVersionVersion extends Schema.CollectionType {
   collectionName: 'versions';
   info: {
@@ -1718,6 +1752,7 @@ declare module '@strapi/types' {
       'api::tech-collection.tech-collection': ApiTechCollectionTechCollection;
       'api::testimonial.testimonial': ApiTestimonialTestimonial;
       'api::training-kit.training-kit': ApiTrainingKitTrainingKit;
+      'api::trial.trial': ApiTrialTrial;
       'api::version.version': ApiVersionVersion;
     }
   }
