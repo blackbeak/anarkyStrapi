@@ -1,0 +1,68 @@
+{
+  "kind": "singleType",
+  "collectionName": "homes",
+  "info": {
+    "singularName": "home",
+    "pluralName": "homes",
+    "displayName": "Home",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "headline": {
+      "type": "string"
+    },
+    "heroImageOne": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "heroImageTwo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "AirSkillHeadline": {
+      "type": "string"
+    },
+    "AirSkillDescription": {
+      "type": "text"
+    },
+    "AirSkillCtaText": {
+      "type": "string"
+    },
+    "AirSkillSlug": {
+      "type": "string"
+    },
+    "AirHUDHeadline": {
+      "type": "string"
+    },
+    "AirHUDDescription": {
+      "type": "text"
+    },
+    "AirHUDCtaText": {
+      "type": "string"
+    },
+    "AirHUDSlug": {
+      "type": "string"
+    }
+  }
+}

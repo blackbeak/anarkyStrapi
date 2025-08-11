@@ -1253,6 +1253,40 @@ export interface ApiFeaturesFeatures extends Schema.SingleType {
   };
 }
 
+export interface ApiHomeHome extends Schema.SingleType {
+  collectionName: 'homes';
+  info: {
+    singularName: 'home';
+    pluralName: 'homes';
+    displayName: 'Home';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    headline: Attribute.String;
+    heroImageOne: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    heroImageTwo: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    AirSkillHeadline: Attribute.String;
+    AirSkillDescription: Attribute.Text;
+    AirSkillCtaText: Attribute.String;
+    AirSkillSlug: Attribute.String;
+    AirHUDHeadline: Attribute.String;
+    AirHUDDescription: Attribute.Text;
+    AirHUDCtaText: Attribute.String;
+    AirHUDSlug: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::home.home', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::home.home', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
 export interface ApiIndexIndex extends Schema.SingleType {
   collectionName: 'indices';
   info: {
@@ -1741,6 +1775,7 @@ declare module '@strapi/types' {
       'api::faq-home.faq-home': ApiFaqHomeFaqHome;
       'api::feature-collection.feature-collection': ApiFeatureCollectionFeatureCollection;
       'api::features.features': ApiFeaturesFeatures;
+      'api::home.home': ApiHomeHome;
       'api::index.index': ApiIndexIndex;
       'api::legal.legal': ApiLegalLegal;
       'api::pricing.pricing': ApiPricingPricing;
