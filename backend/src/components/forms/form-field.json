@@ -1,7 +1,8 @@
 {
   "collectionName": "components_forms_form_fields",
   "info": {
-    "displayName": "formField"
+    "displayName": "formField",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -33,6 +34,16 @@
         "file",
         "hidden"
       ]
+    },
+    "required": {
+      "type": "boolean",
+      "default": false
+    },
+    "options": {
+      "type": "json"
+    },
+    "order": {
+      "type": "integer"
     }
   }
 }

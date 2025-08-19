@@ -4,7 +4,8 @@
   "info": {
     "singularName": "form",
     "pluralName": "forms",
-    "displayName": "form"
+    "displayName": "form",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -25,6 +26,11 @@
     },
     "endpoint": {
       "type": "string"
+    },
+    "field": {
+      "type": "component",
+      "repeatable": true,
+      "component": "forms.form-field"
     }
   }
 }

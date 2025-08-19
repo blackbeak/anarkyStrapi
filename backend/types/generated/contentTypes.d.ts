@@ -1259,6 +1259,7 @@ export interface ApiFormForm extends Schema.CollectionType {
     singularName: 'form';
     pluralName: 'forms';
     displayName: 'form';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1269,6 +1270,7 @@ export interface ApiFormForm extends Schema.CollectionType {
     successMessage: Attribute.String;
     errorMessage: Attribute.String;
     endpoint: Attribute.String;
+    field: Attribute.Component<'forms.form-field', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

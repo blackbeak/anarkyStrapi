@@ -4,6 +4,7 @@ export interface FormsFormField extends Schema.Component {
   collectionName: 'components_forms_form_fields';
   info: {
     displayName: 'formField';
+    description: '';
   };
   attributes: {
     name: Attribute.String;
@@ -28,6 +29,9 @@ export interface FormsFormField extends Schema.Component {
         'hidden'
       ]
     >;
+    required: Attribute.Boolean & Attribute.DefaultTo<false>;
+    options: Attribute.JSON;
+    order: Attribute.Integer;
   };
 }
 
