@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_forms_form_fields",
+  "info": {
+    "displayName": "formField"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "label": {
+      "type": "string"
+    },
+    "placeholder": {
+      "type": "string"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "text",
+        "email",
+        "tel",
+        "password",
+        "number",
+        "url",
+        "date",
+        "datetime-local",
+        "time",
+        "textarea",
+        "select",
+        "radio",
+        "checkbox",
+        "file",
+        "hidden"
+      ]
+    }
+  }
+}

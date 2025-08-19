@@ -1253,6 +1253,32 @@ export interface ApiFeaturesFeatures extends Schema.SingleType {
   };
 }
 
+export interface ApiFormForm extends Schema.CollectionType {
+  collectionName: 'forms';
+  info: {
+    singularName: 'form';
+    pluralName: 'forms';
+    displayName: 'form';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    buttonText: Attribute.String;
+    successMessage: Attribute.String;
+    errorMessage: Attribute.String;
+    endpoint: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::form.form', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::form.form', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
 export interface ApiHomeHome extends Schema.SingleType {
   collectionName: 'homes';
   info: {
@@ -1775,6 +1801,7 @@ declare module '@strapi/types' {
       'api::faq-home.faq-home': ApiFaqHomeFaqHome;
       'api::feature-collection.feature-collection': ApiFeatureCollectionFeatureCollection;
       'api::features.features': ApiFeaturesFeatures;
+      'api::form.form': ApiFormForm;
       'api::home.home': ApiHomeHome;
       'api::index.index': ApiIndexIndex;
       'api::legal.legal': ApiLegalLegal;
