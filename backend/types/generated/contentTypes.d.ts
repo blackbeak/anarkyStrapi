@@ -1253,6 +1253,48 @@ export interface ApiFeaturesFeatures extends Schema.SingleType {
   };
 }
 
+export interface ApiFooterFooter extends Schema.SingleType {
+  collectionName: 'footers';
+  info: {
+    singularName: 'footer';
+    pluralName: 'footers';
+    displayName: 'footer';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    summary: Attribute.String;
+    email: Attribute.String;
+    phone: Attribute.String;
+    address: Attribute.String;
+    headerOne: Attribute.String;
+    headerTwo: Attribute.String;
+    headerThree: Attribute.String;
+    headerFour: Attribute.String;
+    subscribeHeader: Attribute.String;
+    subscribeSummary: Attribute.String;
+    copyrightLeft: Attribute.String;
+    copyrightRight: Attribute.String;
+    logo: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::footer.footer',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::footer.footer',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiFormForm extends Schema.CollectionType {
   collectionName: 'forms';
   info: {
@@ -1803,6 +1845,7 @@ declare module '@strapi/types' {
       'api::faq-home.faq-home': ApiFaqHomeFaqHome;
       'api::feature-collection.feature-collection': ApiFeatureCollectionFeatureCollection;
       'api::features.features': ApiFeaturesFeatures;
+      'api::footer.footer': ApiFooterFooter;
       'api::form.form': ApiFormForm;
       'api::home.home': ApiHomeHome;
       'api::index.index': ApiIndexIndex;
