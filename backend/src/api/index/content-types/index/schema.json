@@ -4,7 +4,7 @@
   "info": {
     "singularName": "index",
     "pluralName": "indices",
-    "displayName": "index",
+    "displayName": "airskill",
     "description": ""
   },
   "options": {
@@ -70,14 +70,15 @@
       "type": "richtext"
     },
     "pdfDownload": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     }
   }
 }

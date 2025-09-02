@@ -1362,7 +1362,7 @@ export interface ApiIndexIndex extends Schema.SingleType {
   info: {
     singularName: 'index';
     pluralName: 'indices';
-    displayName: 'index';
+    displayName: 'airskill';
     description: '';
   };
   options: {
