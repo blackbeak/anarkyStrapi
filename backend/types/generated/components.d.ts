@@ -32,6 +32,7 @@ export interface FormsFormField extends Schema.Component {
     required: Attribute.Boolean & Attribute.DefaultTo<false>;
     options: Attribute.JSON;
     order: Attribute.Integer;
+    value: Attribute.String;
   };
 }
 
