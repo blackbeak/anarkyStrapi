@@ -1110,6 +1110,46 @@ export interface ApiContactContact extends Schema.SingleType {
   };
 }
 
+export interface ApiCtaSectionCtaSection extends Schema.CollectionType {
+  collectionName: 'cta_sections';
+  info: {
+    singularName: 'cta-section';
+    pluralName: 'cta-sections';
+    displayName: 'CtaSection';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    headline: Attribute.String;
+    description: Attribute.String;
+    ctaOne: Attribute.RichText;
+    ctaTwo: Attribute.RichText;
+    ctaThree: Attribute.RichText;
+    ctaOneText: Attribute.String;
+    ctaTwoText: Attribute.String;
+    ctaThreeText: Attribute.String;
+    ctaOneSlug: Attribute.String;
+    ctaTwoSlug: Attribute.String;
+    ctaThreeSlug: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::cta-section.cta-section',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::cta-section.cta-section',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiFaqFaq extends Schema.CollectionType {
   collectionName: 'faqs';
   info: {
@@ -1323,6 +1363,34 @@ export interface ApiFormForm extends Schema.CollectionType {
   };
 }
 
+export interface ApiHeroHero extends Schema.CollectionType {
+  collectionName: 'heroes';
+  info: {
+    singularName: 'hero';
+    pluralName: 'heroes';
+    displayName: 'hero';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    headline: Attribute.String;
+    description: Attribute.Text;
+    ctaOneText: Attribute.String;
+    ctaOneLink: Attribute.String;
+    ctaTwoText: Attribute.String;
+    ctaTwoLink: Attribute.String;
+    backgroundMedia: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::hero.hero', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::hero.hero', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
 export interface ApiHomeHome extends Schema.SingleType {
   collectionName: 'homes';
   info: {
@@ -1429,6 +1497,42 @@ export interface ApiLegalLegal extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::legal.legal',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiPageCollectionPageCollection extends Schema.CollectionType {
+  collectionName: 'page_collections';
+  info: {
+    singularName: 'page-collection';
+    pluralName: 'page-collections';
+    displayName: 'PageCollection';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    headline: Attribute.String;
+    description: Attribute.Text;
+    ctaOneText: Attribute.String;
+    ctaOneLink: Attribute.String;
+    ctaTwoText: Attribute.String;
+    ctaTwoLink: Attribute.String;
+    collectionImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::page-collection.page-collection',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::page-collection.page-collection',
       'oneToOne',
       'admin::user'
     > &
@@ -1841,15 +1945,18 @@ declare module '@strapi/types' {
       'api::case-collection.case-collection': ApiCaseCollectionCaseCollection;
       'api::category.category': ApiCategoryCategory;
       'api::contact.contact': ApiContactContact;
+      'api::cta-section.cta-section': ApiCtaSectionCtaSection;
       'api::faq.faq': ApiFaqFaq;
       'api::faq-home.faq-home': ApiFaqHomeFaqHome;
       'api::feature-collection.feature-collection': ApiFeatureCollectionFeatureCollection;
       'api::features.features': ApiFeaturesFeatures;
       'api::footer.footer': ApiFooterFooter;
       'api::form.form': ApiFormForm;
+      'api::hero.hero': ApiHeroHero;
       'api::home.home': ApiHomeHome;
       'api::index.index': ApiIndexIndex;
       'api::legal.legal': ApiLegalLegal;
+      'api::page-collection.page-collection': ApiPageCollectionPageCollection;
       'api::pricing.pricing': ApiPricingPricing;
       'api::product-variable.product-variable': ApiProductVariableProductVariable;
       'api::reference-logo.reference-logo': ApiReferenceLogoReferenceLogo;

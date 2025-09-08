@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cta_sections",
+  "info": {
+    "singularName": "cta-section",
+    "pluralName": "cta-sections",
+    "displayName": "CtaSection"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "headline": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "ctaOne": {
+      "type": "richtext"
+    },
+    "ctaTwo": {
+      "type": "richtext"
+    },
+    "ctaThree": {
+      "type": "richtext"
+    },
+    "ctaOneText": {
+      "type": "string"
+    },
+    "ctaTwoText": {
+      "type": "string"
+    },
+    "ctaThreeText": {
+      "type": "string"
+    },
+    "ctaOneSlug": {
+      "type": "string"
+    },
+    "ctaTwoSlug": {
+      "type": "string"
+    },
+    "ctaThreeSlug": {
+      "type": "string"
+    }
+  }
+}

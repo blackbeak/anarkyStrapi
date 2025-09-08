@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "page_collections",
+  "info": {
+    "singularName": "page-collection",
+    "pluralName": "page-collections",
+    "displayName": "PageCollection"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "headline": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "ctaOneText": {
+      "type": "string"
+    },
+    "ctaOneLink": {
+      "type": "string"
+    },
+    "ctaTwoText": {
+      "type": "string"
+    },
+    "ctaTwoLink": {
+      "type": "string"
+    },
+    "collectionImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}
