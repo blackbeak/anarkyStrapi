@@ -4,7 +4,8 @@
   "info": {
     "singularName": "cta-section",
     "pluralName": "cta-sections",
-    "displayName": "CtaSection"
+    "displayName": "CtaSection",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -42,6 +43,9 @@
       "type": "string"
     },
     "ctaThreeSlug": {
+      "type": "string"
+    },
+    "ctaID": {
       "type": "string"
     }
   }

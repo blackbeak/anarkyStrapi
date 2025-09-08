@@ -1116,6 +1116,7 @@ export interface ApiCtaSectionCtaSection extends Schema.CollectionType {
     singularName: 'cta-section';
     pluralName: 'cta-sections';
     displayName: 'CtaSection';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1132,6 +1133,7 @@ export interface ApiCtaSectionCtaSection extends Schema.CollectionType {
     ctaOneSlug: Attribute.String;
     ctaTwoSlug: Attribute.String;
     ctaThreeSlug: Attribute.String;
+    ctaID: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1369,6 +1371,7 @@ export interface ApiHeroHero extends Schema.CollectionType {
     singularName: 'hero';
     pluralName: 'heroes';
     displayName: 'hero';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1381,6 +1384,7 @@ export interface ApiHeroHero extends Schema.CollectionType {
     ctaTwoText: Attribute.String;
     ctaTwoLink: Attribute.String;
     backgroundMedia: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    heroID: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1510,6 +1514,7 @@ export interface ApiPageCollectionPageCollection extends Schema.CollectionType {
     singularName: 'page-collection';
     pluralName: 'page-collections';
     displayName: 'PageCollection';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1522,6 +1527,7 @@ export interface ApiPageCollectionPageCollection extends Schema.CollectionType {
     ctaTwoText: Attribute.String;
     ctaTwoLink: Attribute.String;
     collectionImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    collectionID: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

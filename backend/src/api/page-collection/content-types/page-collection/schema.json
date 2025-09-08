@@ -4,7 +4,8 @@
   "info": {
     "singularName": "page-collection",
     "pluralName": "page-collections",
-    "displayName": "PageCollection"
+    "displayName": "PageCollection",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -30,14 +31,18 @@
       "type": "string"
     },
     "collectionImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "collectionID": {
+      "type": "string"
     }
   }
 }
