@@ -43,6 +43,9 @@
     },
     "heroID": {
       "type": "string"
+    },
+    "backgroundVideo": {
+      "type": "string"
     }
   }
 }

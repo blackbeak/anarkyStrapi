@@ -1385,6 +1385,7 @@ export interface ApiHeroHero extends Schema.CollectionType {
     ctaTwoLink: Attribute.String;
     backgroundMedia: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     heroID: Attribute.String;
+    backgroundVideo: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
