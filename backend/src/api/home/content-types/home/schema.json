@@ -15,54 +15,18 @@
     "title": {
       "type": "string"
     },
-    "headline": {
-      "type": "string"
-    },
-    "heroImageOne": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
-    "heroImageTwo": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
-    "AirSkillHeadline": {
-      "type": "string"
-    },
-    "AirSkillDescription": {
+    "description": {
       "type": "text"
     },
-    "AirSkillCtaText": {
-      "type": "string"
+    "hero": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::hero.hero"
     },
-    "AirSkillSlug": {
-      "type": "string"
-    },
-    "AirHUDHeadline": {
-      "type": "string"
-    },
-    "AirHUDDescription": {
-      "type": "text"
-    },
-    "AirHUDCtaText": {
-      "type": "string"
-    },
-    "AirHUDSlug": {
-      "type": "string"
+    "articles": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::article.article"
     }
   }
 }

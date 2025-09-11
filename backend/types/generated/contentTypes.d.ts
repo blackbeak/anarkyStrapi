@@ -1409,17 +1409,13 @@ export interface ApiHomeHome extends Schema.SingleType {
   };
   attributes: {
     title: Attribute.String;
-    headline: Attribute.String;
-    heroImageOne: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    heroImageTwo: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    AirSkillHeadline: Attribute.String;
-    AirSkillDescription: Attribute.Text;
-    AirSkillCtaText: Attribute.String;
-    AirSkillSlug: Attribute.String;
-    AirHUDHeadline: Attribute.String;
-    AirHUDDescription: Attribute.Text;
-    AirHUDCtaText: Attribute.String;
-    AirHUDSlug: Attribute.String;
+    description: Attribute.Text;
+    hero: Attribute.Relation<'api::home.home', 'oneToOne', 'api::hero.hero'>;
+    articles: Attribute.Relation<
+      'api::home.home',
+      'oneToMany',
+      'api::article.article'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
