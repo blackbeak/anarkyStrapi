@@ -1416,6 +1416,8 @@ export interface ApiHomeHome extends Schema.SingleType {
       'oneToMany',
       'api::article.article'
     >;
+    sectionHeadline: Attribute.String;
+    sectionHeadlineTwo: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

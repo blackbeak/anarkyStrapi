@@ -27,6 +27,12 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::article.article"
+    },
+    "sectionHeadline": {
+      "type": "string"
+    },
+    "sectionHeadlineTwo": {
+      "type": "string"
     }
   }
 }
