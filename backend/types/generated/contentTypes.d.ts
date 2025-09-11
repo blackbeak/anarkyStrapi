@@ -1529,6 +1529,20 @@ export interface ApiPageCollectionPageCollection extends Schema.CollectionType {
     ctaTwoLink: Attribute.String;
     collectionImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     collectionID: Attribute.String;
+    styleVariant: Attribute.Enumeration<
+      [
+        'gradient-dark',
+        'gradient-light',
+        'gradient-brand',
+        'solid-white',
+        'solid-dark',
+        'image-overlay'
+      ]
+    >;
+    textAlignment: Attribute.Enumeration<['left', 'right', 'center']> &
+      Attribute.DefaultTo<'center'>;
+    customGradient: Attribute.String;
+    customBackgroundColor: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
