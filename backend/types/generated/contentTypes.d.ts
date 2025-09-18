@@ -854,6 +854,7 @@ export interface ApiAirhudAirhud extends Schema.SingleType {
       'api::cta-section.cta-section'
     >;
     systemOverview: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    videoUrl: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
