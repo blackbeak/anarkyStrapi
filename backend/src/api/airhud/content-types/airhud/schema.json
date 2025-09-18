@@ -1,0 +1,50 @@
+{
+  "kind": "singleType",
+  "collectionName": "airhuds",
+  "info": {
+    "singularName": "airhud",
+    "pluralName": "airhuds",
+    "displayName": "airhud",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "hero": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::hero.hero"
+    },
+    "headline": {
+      "type": "string"
+    },
+    "feature_collections": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::feature-collection.feature-collection"
+    },
+    "subHeadOne": {
+      "type": "string"
+    },
+    "subHeadTwo": {
+      "type": "string"
+    },
+    "cta_section": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::cta-section.cta-section"
+    },
+    "systemOverview": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

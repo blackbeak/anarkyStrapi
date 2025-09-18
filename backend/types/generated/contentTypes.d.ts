@@ -823,6 +823,55 @@ export interface ApiAboutAbout extends Schema.SingleType {
   };
 }
 
+export interface ApiAirhudAirhud extends Schema.SingleType {
+  collectionName: 'airhuds';
+  info: {
+    singularName: 'airhud';
+    pluralName: 'airhuds';
+    displayName: 'airhud';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    hero: Attribute.Relation<
+      'api::airhud.airhud',
+      'oneToOne',
+      'api::hero.hero'
+    >;
+    headline: Attribute.String;
+    feature_collections: Attribute.Relation<
+      'api::airhud.airhud',
+      'oneToMany',
+      'api::feature-collection.feature-collection'
+    >;
+    subHeadOne: Attribute.String;
+    subHeadTwo: Attribute.String;
+    cta_section: Attribute.Relation<
+      'api::airhud.airhud',
+      'oneToOne',
+      'api::cta-section.cta-section'
+    >;
+    systemOverview: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::airhud.airhud',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::airhud.airhud',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiArticleArticle extends Schema.CollectionType {
   collectionName: 'articles';
   info: {
@@ -1956,6 +2005,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
       'api::about.about': ApiAboutAbout;
+      'api::airhud.airhud': ApiAirhudAirhud;
       'api::article.article': ApiArticleArticle;
       'api::author.author': ApiAuthorAuthor;
       'api::benefit.benefit': ApiBenefitBenefit;
