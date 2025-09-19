@@ -862,6 +862,7 @@ export interface ApiAirhudAirhud extends Schema.SingleType {
       'oneToMany',
       'api::benefit.benefit'
     >;
+    faqs: Attribute.Relation<'api::airhud.airhud', 'oneToMany', 'api::faq.faq'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
