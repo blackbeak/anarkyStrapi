@@ -840,7 +840,7 @@ export interface ApiAirhudAirhud extends Schema.SingleType {
       'oneToOne',
       'api::hero.hero'
     >;
-    headline: Attribute.String;
+    benefitHeadline: Attribute.String;
     feature_collections: Attribute.Relation<
       'api::airhud.airhud',
       'oneToMany',
@@ -855,6 +855,13 @@ export interface ApiAirhudAirhud extends Schema.SingleType {
     >;
     systemOverview: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     videoUrl: Attribute.String;
+    benefitText: Attribute.String;
+    videoHeadline: Attribute.String;
+    benefits: Attribute.Relation<
+      'api::airhud.airhud',
+      'oneToMany',
+      'api::benefit.benefit'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

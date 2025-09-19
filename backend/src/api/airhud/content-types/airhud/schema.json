@@ -17,7 +17,7 @@
       "relation": "oneToOne",
       "target": "api::hero.hero"
     },
-    "headline": {
+    "benefitHeadline": {
       "type": "string"
     },
     "feature_collections": {
@@ -49,6 +49,17 @@
     },
     "videoUrl": {
       "type": "string"
+    },
+    "benefitText": {
+      "type": "string"
+    },
+    "videoHeadline": {
+      "type": "string"
+    },
+    "benefits": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::benefit.benefit"
     }
   }
 }
