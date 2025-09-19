@@ -855,7 +855,7 @@ export interface ApiAirhudAirhud extends Schema.SingleType {
     >;
     systemOverview: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     videoUrl: Attribute.String;
-    benefitText: Attribute.String;
+    benefitText: Attribute.Text;
     videoHeadline: Attribute.String;
     benefits: Attribute.Relation<
       'api::airhud.airhud',
