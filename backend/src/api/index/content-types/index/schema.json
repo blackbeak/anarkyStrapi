@@ -79,6 +79,11 @@
         "videos",
         "audios"
       ]
+    },
+    "benefits": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::benefit.benefit"
     }
   }
 }

@@ -1510,6 +1510,11 @@ export interface ApiIndexIndex extends Schema.SingleType {
     downloadImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     downloadBenefits: Attribute.RichText;
     pdfDownload: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    benefits: Attribute.Relation<
+      'api::index.index',
+      'oneToMany',
+      'api::benefit.benefit'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
