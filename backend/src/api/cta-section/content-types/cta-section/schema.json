@@ -18,15 +18,6 @@
     "description": {
       "type": "string"
     },
-    "ctaOne": {
-      "type": "richtext"
-    },
-    "ctaTwo": {
-      "type": "richtext"
-    },
-    "ctaThree": {
-      "type": "richtext"
-    },
     "ctaOneText": {
       "type": "string"
     },
@@ -47,6 +38,15 @@
     },
     "ctaID": {
       "type": "string"
+    },
+    "ctaOne": {
+      "type": "text"
+    },
+    "ctaTwo": {
+      "type": "text"
+    },
+    "ctaThree": {
+      "type": "text"
     }
   }
 }

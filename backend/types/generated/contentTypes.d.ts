@@ -1182,9 +1182,6 @@ export interface ApiCtaSectionCtaSection extends Schema.CollectionType {
   attributes: {
     headline: Attribute.String;
     description: Attribute.String;
-    ctaOne: Attribute.RichText;
-    ctaTwo: Attribute.RichText;
-    ctaThree: Attribute.RichText;
     ctaOneText: Attribute.String;
     ctaTwoText: Attribute.String;
     ctaThreeText: Attribute.String;
@@ -1192,6 +1189,9 @@ export interface ApiCtaSectionCtaSection extends Schema.CollectionType {
     ctaTwoSlug: Attribute.String;
     ctaThreeSlug: Attribute.String;
     ctaID: Attribute.String;
+    ctaOne: Attribute.Text;
+    ctaTwo: Attribute.Text;
+    ctaThree: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
