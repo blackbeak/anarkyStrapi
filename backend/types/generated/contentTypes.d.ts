@@ -1528,6 +1528,32 @@ export interface ApiIndexIndex extends Schema.SingleType {
   };
 }
 
+export interface ApiLabLab extends Schema.SingleType {
+  collectionName: 'labs';
+  info: {
+    singularName: 'lab';
+    pluralName: 'labs';
+    displayName: 'lab';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    formHeadline: Attribute.String;
+    formDescription: Attribute.Text;
+    seoTitle: Attribute.String;
+    seoDescription: Attribute.Text;
+    hero: Attribute.Relation<'api::lab.lab', 'oneToOne', 'api::hero.hero'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::lab.lab', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::lab.lab', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
 export interface ApiLegalLegal extends Schema.CollectionType {
   collectionName: 'legals';
   info: {
@@ -2033,6 +2059,7 @@ declare module '@strapi/types' {
       'api::hero.hero': ApiHeroHero;
       'api::home.home': ApiHomeHome;
       'api::index.index': ApiIndexIndex;
+      'api::lab.lab': ApiLabLab;
       'api::legal.legal': ApiLegalLegal;
       'api::page-collection.page-collection': ApiPageCollectionPageCollection;
       'api::pricing.pricing': ApiPricingPricing;
