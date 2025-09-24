@@ -1,0 +1,64 @@
+{
+  "collectionName": "components_articles_quotes",
+  "info": {
+    "displayName": "quote"
+  },
+  "options": {},
+  "attributes": {
+    "quoteText": {
+      "type": "text"
+    },
+    "personName": {
+      "type": "string"
+    },
+    "personTitle": {
+      "type": "string"
+    },
+    "companyName": {
+      "type": "string"
+    },
+    "companyUrl": {
+      "type": "string"
+    },
+    "headshot": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "quoteStyle": {
+      "type": "enumeration",
+      "enum": [
+        "standard",
+        "large",
+        "boxed",
+        "minimal"
+      ],
+      "default": "standard"
+    },
+    "alignment": {
+      "type": "enumeration",
+      "enum": [
+        "left",
+        "center",
+        "right"
+      ],
+      "default": "center"
+    },
+    "backgroundColor": {
+      "type": "enumeration",
+      "enum": [
+        "transparent",
+        "light-gray",
+        "brand-light",
+        "white"
+      ],
+      "default": "transparent"
+    },
+    "showQuoteMarks": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

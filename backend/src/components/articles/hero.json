@@ -1,0 +1,81 @@
+{
+  "collectionName": "components_articles_heroes",
+  "info": {
+    "displayName": "hero",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "headline": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "backgroundType": {
+      "type": "enumeration",
+      "enum": [
+        "image",
+        "video-url",
+        "gradient-dark",
+        "gradient-light",
+        "gradient-brand",
+        "solid-color"
+      ],
+      "default": "gradient-dark"
+    },
+    "backgroundImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "backgroundVideoUrl": {
+      "type": "string"
+    },
+    "customColor": {
+      "type": "string"
+    },
+    "textAlignment": {
+      "type": "enumeration",
+      "enum": [
+        "left",
+        "right",
+        "center"
+      ],
+      "default": "left"
+    },
+    "ctaOneText": {
+      "type": "string"
+    },
+    "ctaTwoText": {
+      "type": "string"
+    },
+    "ctaOneLink": {
+      "type": "string"
+    },
+    "ctaTwoLink": {
+      "type": "string"
+    },
+    "overlayOpacity": {
+      "type": "integer",
+      "min": 0,
+      "max": 100,
+      "default": 40
+    },
+    "minHeight": {
+      "type": "enumeration",
+      "enum": [
+        "small",
+        "medium",
+        "large"
+      ],
+      "default": "medium"
+    },
+    "customGradient": {
+      "type": "string"
+    }
+  }
+}

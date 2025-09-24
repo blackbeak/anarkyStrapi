@@ -912,6 +912,15 @@ export interface ApiArticleArticle extends Schema.CollectionType {
       'oneToMany',
       'api::category.category'
     >;
+    articles: Attribute.DynamicZone<
+      [
+        'articles.hero',
+        'articles.quote',
+        'articles.rich-text',
+        'articles.body-image-text',
+        'articles.article-media'
+      ]
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

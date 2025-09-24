@@ -1,0 +1,69 @@
+{
+  "collectionName": "components_articles_rich_texts",
+  "info": {
+    "displayName": "rich-text"
+  },
+  "options": {},
+  "attributes": {
+    "content": {
+      "type": "richtext"
+    },
+    "textSize": {
+      "type": "enumeration",
+      "enum": [
+        "small",
+        "medium",
+        "large",
+        "extra-large"
+      ],
+      "default": "medium"
+    },
+    "textAlignment": {
+      "type": "enumeration",
+      "enum": [
+        "left",
+        "center",
+        "right",
+        "justify"
+      ],
+      "default": "left"
+    },
+    "containerWidth": {
+      "type": "enumeration",
+      "enum": [
+        "narrow",
+        "medium",
+        "wide",
+        "full-width"
+      ],
+      "default": "medium"
+    },
+    "backgroundColor": {
+      "type": "enumeration",
+      "enum": [
+        "transparent",
+        "white",
+        "light-gray",
+        "brand-light"
+      ],
+      "default": "transparent"
+    },
+    "padding": {
+      "type": "enumeration",
+      "enum": [
+        "none",
+        "small",
+        "medium",
+        "large"
+      ],
+      "default": "medium"
+    },
+    "enableDropCap": {
+      "type": "boolean",
+      "default": false
+    },
+    "customCssClass": {
+      "type": "string"
+    }
+  }
+}

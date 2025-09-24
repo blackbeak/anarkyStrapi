@@ -1,0 +1,68 @@
+{
+  "collectionName": "components_articles_article_medias",
+  "info": {
+    "displayName": "article-media"
+  },
+  "options": {},
+  "attributes": {
+    "mediaType": {
+      "type": "enumeration",
+      "enum": [
+        "image",
+        "video-url"
+      ],
+      "required": true
+    },
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "videoUrl": {
+      "type": "string"
+    },
+    "caption": {
+      "type": "string"
+    },
+    "altText": {
+      "type": "string"
+    },
+    "alignment": {
+      "type": "enumeration",
+      "enum": [
+        "left",
+        "right",
+        "center",
+        "full-width"
+      ],
+      "default": "center"
+    },
+    "size": {
+      "type": "enumeration",
+      "enum": [
+        "small",
+        "medium",
+        "large",
+        "full-width"
+      ],
+      "default": "medium"
+    },
+    "borderRadius": {
+      "type": "enumeration",
+      "enum": [
+        "none",
+        "small",
+        "medium",
+        "large",
+        "full"
+      ],
+      "default": "medium"
+    },
+    "shadow": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

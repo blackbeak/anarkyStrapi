@@ -65,6 +65,16 @@
       "relation": "oneToMany",
       "target": "api::category.category",
       "mappedBy": "article"
+    },
+    "articles": {
+      "type": "dynamiczone",
+      "components": [
+        "articles.hero",
+        "articles.quote",
+        "articles.rich-text",
+        "articles.body-image-text",
+        "articles.article-media"
+      ]
     }
   }
 }

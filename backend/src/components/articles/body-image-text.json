@@ -1,0 +1,81 @@
+{
+  "collectionName": "components_articles_body_image_texts",
+  "info": {
+    "displayName": "body-image-text"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "imagePosition": {
+      "type": "enumeration",
+      "enum": [
+        "left",
+        "right"
+      ],
+      "default": "left"
+    },
+    "textContent": {
+      "type": "richtext"
+    },
+    "altText": {
+      "type": "string"
+    },
+    "imageSize": {
+      "type": "enumeration",
+      "enum": [
+        "small",
+        "medium",
+        "large"
+      ],
+      "default": "medium"
+    },
+    "verticalAlignment": {
+      "type": "enumeration",
+      "enum": [
+        "top",
+        "center",
+        "bottom"
+      ],
+      "default": "top"
+    },
+    "backgroundColor": {
+      "type": "enumeration",
+      "enum": [
+        "transparent",
+        "white",
+        "light-gray",
+        "brand-light"
+      ],
+      "default": "transparent"
+    },
+    "spacing": {
+      "type": "enumeration",
+      "enum": [
+        "tight",
+        "normal",
+        "loose"
+      ],
+      "default": "normal"
+    },
+    "borderRadius": {
+      "type": "enumeration",
+      "enum": [
+        "none",
+        "small",
+        "medium",
+        "large"
+      ],
+      "default": "medium"
+    },
+    "imageShadow": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}
