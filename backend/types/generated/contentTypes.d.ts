@@ -893,20 +893,15 @@ export interface ApiArticleArticle extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    title: Attribute.String;
-    headline: Attribute.String;
-    summary: Attribute.Text;
-    body: Attribute.RichText;
-    articleImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    seoTitle: Attribute.String;
+    seoSummary: Attribute.Text;
+    seoFeatureImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     author: Attribute.Relation<
       'api::article.article',
       'oneToOne',
       'api::author.author'
     >;
     slug: Attribute.String;
-    bodyImageText: Attribute.RichText;
-    videoUrl: Attribute.String;
-    headerImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     categories: Attribute.Relation<
       'api::article.article',
       'oneToMany',

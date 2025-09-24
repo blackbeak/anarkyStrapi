@@ -12,19 +12,13 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "title": {
+    "seoTitle": {
       "type": "string"
     },
-    "headline": {
-      "type": "string"
-    },
-    "summary": {
+    "seoSummary": {
       "type": "text"
     },
-    "body": {
-      "type": "richtext"
-    },
-    "articleImage": {
+    "seoFeatureImage": {
       "type": "media",
       "multiple": false,
       "required": false,
@@ -42,23 +36,6 @@
     },
     "slug": {
       "type": "string"
-    },
-    "bodyImageText": {
-      "type": "richtext"
-    },
-    "videoUrl": {
-      "type": "string"
-    },
-    "headerImage": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
     },
     "categories": {
       "type": "relation",
