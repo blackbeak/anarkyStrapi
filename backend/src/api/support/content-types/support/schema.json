@@ -18,7 +18,7 @@
     "faqHeadline": {
       "type": "string"
     },
-    "seoTitile": {
+    "seoTitle": {
       "type": "string"
     },
     "seoDescription": {
@@ -29,9 +29,9 @@
       "relation": "oneToOne",
       "target": "api::hero.hero"
     },
-    "faq": {
+    "faqs": {
       "type": "relation",
-      "relation": "oneToOne",
+      "relation": "oneToMany",
       "target": "api::faq.faq"
     },
     "white_papers": {

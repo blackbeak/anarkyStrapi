@@ -1827,14 +1827,18 @@ export interface ApiSupportSupport extends Schema.SingleType {
   attributes: {
     whitePaperHeadline: Attribute.String;
     faqHeadline: Attribute.String;
-    seoTitile: Attribute.String;
+    seoTitle: Attribute.String;
     seoDescription: Attribute.Text;
     hero: Attribute.Relation<
       'api::support.support',
       'oneToOne',
       'api::hero.hero'
     >;
-    faq: Attribute.Relation<'api::support.support', 'oneToOne', 'api::faq.faq'>;
+    faqs: Attribute.Relation<
+      'api::support.support',
+      'oneToMany',
+      'api::faq.faq'
+    >;
     white_papers: Attribute.Relation<
       'api::support.support',
       'oneToMany',
