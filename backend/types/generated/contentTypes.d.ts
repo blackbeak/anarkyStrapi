@@ -2081,6 +2081,7 @@ export interface ApiWhitePaperWhitePaper extends Schema.CollectionType {
     singularName: 'white-paper';
     pluralName: 'white-papers';
     displayName: 'white-paper';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -2090,6 +2091,11 @@ export interface ApiWhitePaperWhitePaper extends Schema.CollectionType {
     whitePaperDescription: Attribute.Text;
     whitePaperImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     whitePaperFile: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    form: Attribute.Relation<
+      'api::white-paper.white-paper',
+      'oneToOne',
+      'api::form.form'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

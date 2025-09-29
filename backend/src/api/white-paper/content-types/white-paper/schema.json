@@ -4,7 +4,8 @@
   "info": {
     "singularName": "white-paper",
     "pluralName": "white-papers",
-    "displayName": "white-paper"
+    "displayName": "white-paper",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -18,24 +19,31 @@
       "type": "text"
     },
     "whitePaperImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "whitePaperFile": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "form": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::form.form"
     }
   }
 }
