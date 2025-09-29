@@ -1,0 +1,43 @@
+{
+  "kind": "singleType",
+  "collectionName": "supports",
+  "info": {
+    "singularName": "support",
+    "pluralName": "supports",
+    "displayName": "support",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "whitePaperHeadline": {
+      "type": "string"
+    },
+    "faqHeadline": {
+      "type": "string"
+    },
+    "seoTitile": {
+      "type": "string"
+    },
+    "seoDescription": {
+      "type": "text"
+    },
+    "hero": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::hero.hero"
+    },
+    "faq": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::faq.faq"
+    },
+    "white_papers": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::white-paper.white-paper"
+    }
+  }
+}

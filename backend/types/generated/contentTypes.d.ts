@@ -1813,6 +1813,51 @@ export interface ApiSoftwareItemSoftwareItem extends Schema.CollectionType {
   };
 }
 
+export interface ApiSupportSupport extends Schema.SingleType {
+  collectionName: 'supports';
+  info: {
+    singularName: 'support';
+    pluralName: 'supports';
+    displayName: 'support';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    whitePaperHeadline: Attribute.String;
+    faqHeadline: Attribute.String;
+    seoTitile: Attribute.String;
+    seoDescription: Attribute.Text;
+    hero: Attribute.Relation<
+      'api::support.support',
+      'oneToOne',
+      'api::hero.hero'
+    >;
+    faq: Attribute.Relation<'api::support.support', 'oneToOne', 'api::faq.faq'>;
+    white_papers: Attribute.Relation<
+      'api::support.support',
+      'oneToMany',
+      'api::white-paper.white-paper'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::support.support',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::support.support',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiTargetTarget extends Schema.CollectionType {
   collectionName: 'targets';
   info: {
@@ -2030,6 +2075,39 @@ export interface ApiVersionVersion extends Schema.CollectionType {
   };
 }
 
+export interface ApiWhitePaperWhitePaper extends Schema.CollectionType {
+  collectionName: 'white_papers';
+  info: {
+    singularName: 'white-paper';
+    pluralName: 'white-papers';
+    displayName: 'white-paper';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    whitePaperTitle: Attribute.String;
+    whitePaperDescription: Attribute.Text;
+    whitePaperImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    whitePaperFile: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::white-paper.white-paper',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::white-paper.white-paper',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -2076,12 +2154,14 @@ declare module '@strapi/types' {
       'api::reference-logo.reference-logo': ApiReferenceLogoReferenceLogo;
       'api::scenario.scenario': ApiScenarioScenario;
       'api::software-item.software-item': ApiSoftwareItemSoftwareItem;
+      'api::support.support': ApiSupportSupport;
       'api::target.target': ApiTargetTarget;
       'api::tech-collection.tech-collection': ApiTechCollectionTechCollection;
       'api::testimonial.testimonial': ApiTestimonialTestimonial;
       'api::training-kit.training-kit': ApiTrainingKitTrainingKit;
       'api::trial.trial': ApiTrialTrial;
       'api::version.version': ApiVersionVersion;
+      'api::white-paper.white-paper': ApiWhitePaperWhitePaper;
     }
   }
 }
