@@ -46,6 +46,18 @@
     },
     "backgroundVideo": {
       "type": "string"
+    },
+    "styleVariant": {
+      "type": "enumeration",
+      "enum": [
+        "gradient-dark",
+        "gradient-light",
+        "gradient-brand",
+        "solid-white",
+        "solid-dark",
+        "image-overlay"
+      ],
+      "default": "gradient-dark"
     }
   }
 }

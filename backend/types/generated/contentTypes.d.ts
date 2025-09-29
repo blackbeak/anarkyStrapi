@@ -1448,6 +1448,17 @@ export interface ApiHeroHero extends Schema.CollectionType {
     backgroundMedia: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     heroID: Attribute.String;
     backgroundVideo: Attribute.String;
+    styleVariant: Attribute.Enumeration<
+      [
+        'gradient-dark',
+        'gradient-light',
+        'gradient-brand',
+        'solid-white',
+        'solid-dark',
+        'image-overlay'
+      ]
+    > &
+      Attribute.DefaultTo<'gradient-dark'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
