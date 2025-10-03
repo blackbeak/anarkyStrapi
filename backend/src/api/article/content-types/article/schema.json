@@ -52,6 +52,9 @@
         "articles.body-image-text",
         "articles.article-media"
       ]
+    },
+    "date": {
+      "type": "date"
     }
   }
 }

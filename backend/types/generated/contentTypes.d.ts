@@ -916,6 +916,7 @@ export interface ApiArticleArticle extends Schema.CollectionType {
         'articles.article-media'
       ]
     >;
+    date: Attribute.Date;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
