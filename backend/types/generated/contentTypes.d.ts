@@ -1449,16 +1449,6 @@ export interface ApiHeroHero extends Schema.CollectionType {
     backgroundMedia: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     heroID: Attribute.String;
     backgroundVideo: Attribute.String;
-    styleVariant: Attribute.Enumeration<
-      [
-        'gradient-dark',
-        'gradient-light',
-        'gradient-brand',
-        'solid-white',
-        'solid-dark',
-        'image-overlay'
-      ]
-    >;
     overlayEnabled: Attribute.Boolean & Attribute.DefaultTo<false>;
     overlayOpacity: Attribute.Integer &
       Attribute.SetMinMax<
@@ -1469,6 +1459,8 @@ export interface ApiHeroHero extends Schema.CollectionType {
         number
       > &
       Attribute.DefaultTo<50>;
+    textAlignment: Attribute.Enumeration<['left', 'right', 'center']> &
+      Attribute.DefaultTo<'center'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

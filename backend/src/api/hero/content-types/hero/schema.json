@@ -47,17 +47,6 @@
     "backgroundVideo": {
       "type": "string"
     },
-    "styleVariant": {
-      "type": "enumeration",
-      "enum": [
-        "gradient-dark",
-        "gradient-light",
-        "gradient-brand",
-        "solid-white",
-        "solid-dark",
-        "image-overlay"
-      ]
-    },
     "overlayEnabled": {
       "type": "boolean",
       "default": false
@@ -67,6 +56,15 @@
       "min": 0,
       "max": 100,
       "default": 50
+    },
+    "textAlignment": {
+      "type": "enumeration",
+      "enum": [
+        "left",
+        "right",
+        "center"
+      ],
+      "default": "center"
     }
   }
 }
