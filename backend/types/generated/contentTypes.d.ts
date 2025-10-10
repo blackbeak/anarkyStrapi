@@ -1516,8 +1516,6 @@ export interface ApiIndexIndex extends Schema.SingleType {
   };
   attributes: {
     title: Attribute.String;
-    headline: Attribute.String;
-    summary: Attribute.Text;
     bodyImageText: Attribute.RichText;
     bodyImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     body: Attribute.RichText;
@@ -1532,6 +1530,7 @@ export interface ApiIndexIndex extends Schema.SingleType {
       'oneToMany',
       'api::benefit.benefit'
     >;
+    hero: Attribute.Relation<'api::index.index', 'oneToOne', 'api::hero.hero'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

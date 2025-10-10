@@ -15,12 +15,6 @@
     "title": {
       "type": "string"
     },
-    "headline": {
-      "type": "string"
-    },
-    "summary": {
-      "type": "text"
-    },
     "bodyImageText": {
       "type": "richtext"
     },
@@ -84,6 +78,11 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::benefit.benefit"
+    },
+    "hero": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::hero.hero"
     }
   }
 }
