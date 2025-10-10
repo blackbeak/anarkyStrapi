@@ -56,8 +56,17 @@
         "solid-white",
         "solid-dark",
         "image-overlay"
-      ],
-      "default": "gradient-dark"
+      ]
+    },
+    "overlayEnabled": {
+      "type": "boolean",
+      "default": false
+    },
+    "overlayOpacity": {
+      "type": "integer",
+      "min": 0,
+      "max": 100,
+      "default": 50
     }
   }
 }

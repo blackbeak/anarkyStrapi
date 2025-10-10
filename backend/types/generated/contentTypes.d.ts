@@ -1458,8 +1458,17 @@ export interface ApiHeroHero extends Schema.CollectionType {
         'solid-dark',
         'image-overlay'
       ]
-    > &
-      Attribute.DefaultTo<'gradient-dark'>;
+    >;
+    overlayEnabled: Attribute.Boolean & Attribute.DefaultTo<false>;
+    overlayOpacity: Attribute.Integer &
+      Attribute.SetMinMax<
+        {
+          min: 0;
+          max: 100;
+        },
+        number
+      > &
+      Attribute.DefaultTo<50>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
