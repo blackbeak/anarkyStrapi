@@ -914,7 +914,7 @@ export interface ApiArticleArticle extends Schema.CollectionType {
     date: Attribute.Date;
     categories: Attribute.Relation<
       'api::article.article',
-      'oneToMany',
+      'manyToMany',
       'api::category.category'
     >;
     createdAt: Attribute.DateTime;
@@ -1116,9 +1116,9 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
   attributes: {
     name: Attribute.String;
     slug: Attribute.String;
-    article: Attribute.Relation<
+    articles: Attribute.Relation<
       'api::category.category',
-      'manyToOne',
+      'manyToMany',
       'api::article.article'
     >;
     createdAt: Attribute.DateTime;
