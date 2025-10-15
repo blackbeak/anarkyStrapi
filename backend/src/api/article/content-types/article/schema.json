@@ -37,12 +37,6 @@
     "slug": {
       "type": "string"
     },
-    "categories": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::category.category",
-      "mappedBy": "article"
-    },
     "articles": {
       "type": "dynamiczone",
       "components": [

@@ -902,11 +902,6 @@ export interface ApiArticleArticle extends Schema.CollectionType {
       'api::author.author'
     >;
     slug: Attribute.String;
-    categories: Attribute.Relation<
-      'api::article.article',
-      'oneToMany',
-      'api::category.category'
-    >;
     articles: Attribute.DynamicZone<
       [
         'articles.hero',
@@ -1116,11 +1111,6 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
   attributes: {
     name: Attribute.String;
     slug: Attribute.String;
-    article: Attribute.Relation<
-      'api::category.category',
-      'manyToOne',
-      'api::article.article'
-    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
