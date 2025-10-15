@@ -912,6 +912,11 @@ export interface ApiArticleArticle extends Schema.CollectionType {
       ]
     >;
     date: Attribute.Date;
+    categories: Attribute.Relation<
+      'api::article.article',
+      'oneToMany',
+      'api::category.category'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1111,6 +1116,11 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
   attributes: {
     name: Attribute.String;
     slug: Attribute.String;
+    article: Attribute.Relation<
+      'api::category.category',
+      'manyToOne',
+      'api::article.article'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
