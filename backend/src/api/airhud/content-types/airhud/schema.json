@@ -65,6 +65,9 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::faq.faq"
+    },
+    "supportedDrones": {
+      "type": "richtext"
     }
   }
 }
