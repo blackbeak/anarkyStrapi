@@ -53,6 +53,9 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::software-item.software-item"
+    },
+    "publish_staging": {
+      "type": "boolean"
     }
   }
 }

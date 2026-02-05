@@ -2074,6 +2074,7 @@ export interface ApiVersionVersion extends Schema.CollectionType {
       'oneToMany',
       'api::software-item.software-item'
     >;
+    publish_staging: Attribute.Boolean;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
