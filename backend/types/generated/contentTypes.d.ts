@@ -2075,6 +2075,8 @@ export interface ApiVersionVersion extends Schema.CollectionType {
       'api::software-item.software-item'
     >;
     publish_staging: Attribute.Boolean;
+    monthlyPrice: Attribute.BigInteger;
+    stripePriceMonthlyID: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

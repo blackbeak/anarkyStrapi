@@ -56,6 +56,12 @@
     },
     "publish_staging": {
       "type": "boolean"
+    },
+    "monthlyPrice": {
+      "type": "biginteger"
+    },
+    "stripePriceMonthlyID": {
+      "type": "string"
     }
   }
 }
